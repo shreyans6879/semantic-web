@@ -1,0 +1,230 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/team-1/yummy-app#"
+     xml:base="http://www.semanticweb.org/team-1/yummy-app"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/team-1/yummy-app"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://www.semanticweb.org/team-1/yummy-app#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/team-1/yummy-app#belongsTo">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/team-1/yummy-app#hasIngredient"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/team-1/yummy-app#dish"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/team-1/yummy-app#belongsTo"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/team-1/yummy-app#cuisine"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/team-1/yummy-app#hasIngredient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/team-1/yummy-app#hasIngredient">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/team-1/yummy-app#hasIngredient"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/team-1/yummy-app#dish"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/team-1/yummy-app#hasIngredient"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/team-1/yummy-app#ingredient"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://www.semanticweb.org/team-1/yummy-app#hasNutrient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/team-1/yummy-app#hasNutrient">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/team-1/yummy-app#hasIngredient"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/team-1/yummy-app#ingredient"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/team-1/yummy-app#hasIngredient"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/team-1/yummy-app#dish"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/team-1/yummy-app#ingredient"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://www.semanticweb.org/team-1/yummy-app#hasAlcohols -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/team-1/yummy-app#hasAlcohols"/>
+
+
+
+    <!-- http://www.semanticweb.org/team-1/yummy-app#hasCalories -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/team-1/yummy-app#hasCalories"/>
+
+
+
+    <!-- http://www.semanticweb.org/team-1/yummy-app#hasCarbohydrates -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/team-1/yummy-app#hasCarbohydrates"/>
+
+
+
+    <!-- http://www.semanticweb.org/team-1/yummy-app#hasCuisine -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/team-1/yummy-app#hasCuisine"/>
+
+
+
+    <!-- http://www.semanticweb.org/team-1/yummy-app#hasDishID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/team-1/yummy-app#hasDishID"/>
+
+
+
+    <!-- http://www.semanticweb.org/team-1/yummy-app#hasDishName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/team-1/yummy-app#hasDishName"/>
+
+
+
+    <!-- http://www.semanticweb.org/team-1/yummy-app#hasFats -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/team-1/yummy-app#hasFats"/>
+
+
+
+    <!-- http://www.semanticweb.org/team-1/yummy-app#hasOils -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/team-1/yummy-app#hasOils"/>
+
+
+
+    <!-- http://www.semanticweb.org/team-1/yummy-app#hasSaturatedFats -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/team-1/yummy-app#hasSaturatedFats">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/team-1/yummy-app#hasFats"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!-- http://www.semanticweb.org/team-1/yummy-app#hasSolidFats -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/team-1/yummy-app#hasSolidFats">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/team-1/yummy-app#hasFats"/>
+    </owl:DatatypeProperty>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://www.semanticweb.org/team-1/yummy-app#cuisine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/team-1/yummy-app#cuisine"/>
+
+
+
+    <!-- http://www.semanticweb.org/team-1/yummy-app#dish -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/team-1/yummy-app#dish"/>
+
+
+
+    <!-- http://www.semanticweb.org/team-1/yummy-app#ingredient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/team-1/yummy-app#ingredient"/>
+
+
+
+    <!-- http://www.semanticweb.org/team-1/yummy-app#nutrient -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/team-1/yummy-app#nutrient"/>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/team-1/yummy-app#cuisine"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/team-1/yummy-app#dish"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/team-1/yummy-app#ingredient"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/team-1/yummy-app#nutrient"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
